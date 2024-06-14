@@ -5,3 +5,5 @@ https://www.jenkins.io/doc/book/installing/docker/
 docker build -t myjenkins-blueocean:2.452.2-1 .
 ./run_docker_jenkins.sh
 ```
+# to use node
+Restart and follow https://plugins.jenkins.io/nodejs/
