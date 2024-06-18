@@ -26,6 +26,11 @@ jobs:
     - run: npm test
     - run: npm run build --if-present
     - run: npm run deploy
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: ./artifact
     
   deploy:
     environment:
@@ -33,6 +38,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+          path: ./artifact
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
