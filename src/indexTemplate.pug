@@ -1,0 +1,9 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+  body
+    each operation in operations
+      h1 #{operation.title}
+        p.
+          Example: #{operation.example}
