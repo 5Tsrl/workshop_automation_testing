@@ -18,6 +18,7 @@ fs.writeFileSync(
   pug.compileFile("src/indexTemplate.pug")({
     operations: [
       { title: "Addition", example: `${a} + ${b} = ${arithmetic.sum(a, b)}` },
+      { title: "I to IA", example: `ghii = ${arithmetic.i2ia('ghii')}` },
     ],
   })
 );
